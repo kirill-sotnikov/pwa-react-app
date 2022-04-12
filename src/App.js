@@ -31,13 +31,13 @@ function App() {
   useEffect(() => {
     doReq();
   }, []);
-  if (!page) {
-    return (
-      <div className="App">
-        <p>loading</p>;
-      </div>
-    );
-  }
+  // if (!page) {
+  //   return (
+  //     <div className="App">
+  //       <p>loading</p>;
+  //     </div>
+  //   );
+  // }
   return (
     <div className="App">
       <p>Index</p>
@@ -51,11 +51,13 @@ function App() {
           margin: "0 auto",
         }}
       >
-        {page.map((item, index) => {
-          if (index < 10) {
-            return <Block key={index} item={item} />;
-          }
-        })}
+        {!page
+          ? null
+          : page.map((item, index) => {
+              if (index < 10) {
+                return <Block key={index} item={item} />;
+              }
+            })}
       </div>
       <h1>End of list</h1>
     </div>
