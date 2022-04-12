@@ -41,6 +41,9 @@ function App() {
   return (
     <div className="App">
       <p>Index</p>
+      <h1>This text always on this page</h1>
+      <button onClick={() => alert("Hello")}>this button too</button>
+      <p>button do alert</p>
       <div
         style={{
           border: "1px solid blue",
@@ -54,6 +57,7 @@ function App() {
           }
         })}
       </div>
+      <h1>End of list</h1>
     </div>
   );
 }
